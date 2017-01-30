@@ -31,13 +31,9 @@ RUN pip install --upgrade pip && \
     pip install python-consul boto mysql paramiko PyYAML Jinja2 httplib2 six azure==2.0.0rc5 awscli && \
     rm -Rf ~/.pip/cache/ /tmp/* /var/tmp/*
 
+ADD ./ansible-env.sh /
 RUN git clone git://github.com/ansible/ansible.git --recursive /usr/local/ansible && \
-	cd /usr/local/ansible && \
-	git checkout $ANSIBLE_BRANCH && \
-	git pull --rebase && \
-	git submodule update --init --recursive && \
-	source ./hacking/env-setup && \
-	ansible --version
+    /ansible-env.sh
 
 ENV TERRAFORM_VERSION 0.8.5
 
