@@ -23,7 +23,7 @@ RUN apt update && \
         openssh-client \
         git \
         unzip \
-        curl && \
+        curl \
         jq && \
     apt clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
