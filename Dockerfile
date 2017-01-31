@@ -41,5 +41,3 @@ ENV TERRAFORM_VERSION 0.8.5
 RUN curl "https://releases.hashicorp.com/terraform/$TERRAFORM_VERSION/terraform_"$TERRAFORM_VERSION"_linux_amd64.zip" -o /tmp/terraform.zip && \
     unzip /tmp/terraform.zip && mv terraform /usr/local/bin/ && \
     rm -f /tmp/terraform.zip
-
-RUN groupadd jenkins -g 1001 && useradd -u 1001 -g 1001 -m jenkins
