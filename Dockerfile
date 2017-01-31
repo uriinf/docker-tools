@@ -24,6 +24,7 @@ RUN apt update && \
         git \
         unzip \
         curl && \
+        jq && \
     apt clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
