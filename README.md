@@ -1,5 +1,5 @@
 # docker-tools
-Based on ubuntu 16.04 container includes ansible stable 2.2 and terraform.  
+Based on ubuntu 16.04 container includes ansible stable 2.2, terraform and awscli.  
 
 ## example
 ```bash
