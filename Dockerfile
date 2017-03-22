@@ -36,7 +36,7 @@ ADD ./ansible-env.sh /
 RUN git clone git://github.com/ansible/ansible.git --recursive /usr/local/ansible && \
     /ansible-env.sh
 
-ENV TERRAFORM_VERSION 0.8.5
+ENV TERRAFORM_VERSION 0.9.1
 
 RUN curl "https://releases.hashicorp.com/terraform/$TERRAFORM_VERSION/terraform_"$TERRAFORM_VERSION"_linux_amd64.zip" -o /tmp/terraform.zip && \
     unzip /tmp/terraform.zip && mv terraform /usr/local/bin/ && \
