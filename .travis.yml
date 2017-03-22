@@ -7,7 +7,7 @@ before_install:
   - docker build -t uriinf/tools .
 
 script:
-  - ANSIBLE_RETRY_FILES_ENABLED=0 docker run -it --rm -v $(pwd)/test:/workspace uriinf/tools ansible-playbook -i ./hosts play.yml
+  - ANSIBLE_RETRY_FILES_ENABLED=0 docker run -it --rm -v $(pwd)/test:/workspace -w /workspace uriinf/tools ansible-playbook -i ./hosts play.yml
   - docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd)/test:/workspace -w /workspace uriinf/tools terraform apply
   - docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd)/test:/workspace -w /workspace uriinf/tools terraform destroy -force
   - rm -rf test/*.tfstate*
