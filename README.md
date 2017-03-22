@@ -3,12 +3,11 @@ Based on ubuntu 16.04 container includes ansible stable 2.2, terraform and awscl
 
 ## ansible example
 ```bash
-ANSIBLE_RETRY_FILES_ENABLED=0 docker run --rm -v $(pwd)/test:/workspace -w /workspace uriinf/tools ansible-playbook -i ./hosts play.yml
-docker run --rm -it -v $(pwd)/workspace:/workspace uriinf/tools terraform plan
+ANSIBLE_RETRY_FILES_ENABLED=0 docker run -it --rm -v $(pwd)/test:/workspace -w /workspace uriinf/tools ansible-playbook -i ./hosts play.yml
  ```
  ## terraform example
  ```bash
 docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd)/test:/workspace -w /workspace uriinf/tools terraform apply
 docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd)/test:/workspace -w /workspace uriinf/tools terraform destroy -force
-rm -rf *.tfstate*
+rm -rf test/*.tfstate*
 ```
