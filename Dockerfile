@@ -1,5 +1,7 @@
 FROM ubuntu:16.04
 
+MAINTAINER uriinf
+
 ENV ANSIBLE_BRANCH stable-2.2
 
 ENV PATH /usr/local/ansible/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
