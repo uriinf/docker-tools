@@ -41,5 +41,5 @@ RUN git clone git://github.com/ansible/ansible.git --recursive /usr/local/ansibl
 ENV TERRAFORM_VERSION 0.11.7
 
 RUN curl "https://releases.hashicorp.com/terraform/$TERRAFORM_VERSION/terraform_"$TERRAFORM_VERSION"_linux_amd64.zip" -o /tmp/terraform.zip && \
-    unzip /tmp/terraform.zip && mv terraform /usr/local/bin/ && \
+    unzip /tmp/terraform.zip && mv terraform /usr/bin/ && \
     rm -f /tmp/terraform.zip
