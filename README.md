@@ -14,5 +14,5 @@ ANSIBLE_RETRY_FILES_ENABLED=0 docker run -it --rm -v $(pwd)/test:/workspace -w /
 docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd)/test:/workspace -w /workspace uriinf/tools terraform init
 docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd)/test:/workspace -w /workspace uriinf/tools terraform apply -auto-approve
 docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd)/test:/workspace -w /workspace uriinf/tools terraform destroy -auto-approve
-rm -rf rm -rf test/.terraform test/*.tfstate*
+docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd)/test:/workspace -w /workspace uriinf/tools rm -rf rm -rf .terraform *.tfstate*
 ```
