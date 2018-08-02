@@ -31,7 +31,7 @@ RUN apt update && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN pip install --upgrade pip==9.0.3 && \
-    pip install python-consul boto mysql paramiko PyYAML Jinja2 httplib2 six azure awscli cfn_flip && \
+    pip install python-consul boto boto3 botocore mysql paramiko PyYAML Jinja2 httplib2 six azure awscli cfn_flip && \
     rm -Rf ~/.pip/cache/ /tmp/* /var/tmp/*
 
 ADD ./ansible-env.sh /
