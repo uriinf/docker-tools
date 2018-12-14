@@ -1,5 +1,5 @@
 resource "docker_container" "tools" {
   name  = "tools"
-  image = "uriinf/tools"
+  image = "local/tools"
   command = ["terraform", "version"]
 }
